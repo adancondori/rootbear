@@ -86,14 +86,14 @@ public class CheckRootTask extends AsyncTask<Boolean, Integer, Boolean> {
                     mIsCheck = check.detectPotentiallyDangerousApps();
                     Log.d(TAG, "PotentiallyDangerousApps " + (mIsCheck ? "detected" : "not detected"));
                     break;
-                case 24:
-                    mIsCheck = check.detectTestKeys();
-                    Log.d(TAG, "TestKeys " + (mIsCheck ? "detected" : "not detected"));
-                    break;
-                case 32:
-                    mIsCheck = check.checkForBusyBoxBinary();
-                    Log.d(TAG, "BusyBoxBinary " + (mIsCheck ? "detected" : "not detected"));
-                    break;
+//                case 24:
+//                    mIsCheck = check.detectTestKeys();
+//                    Log.d(TAG, "TestKeys " + (mIsCheck ? "detected" : "not detected"));
+//                    break;
+//                case 32:
+//                    mIsCheck = check.checkForBusyBoxBinary();
+//                    Log.d(TAG, "BusyBoxBinary " + (mIsCheck ? "detected" : "not detected"));
+//                    break;
                 case 40:
                     mIsCheck = check.checkForSuBinary();
                     Log.d(TAG, "SU Binary " + (mIsCheck ? "detected" : "not detected"));
@@ -106,10 +106,10 @@ public class CheckRootTask extends AsyncTask<Boolean, Integer, Boolean> {
                     mIsCheck = check.checkForRWPaths();
                     Log.d(TAG, "ForRWPaths " + (mIsCheck ? "detected" : "not detected"));
                     break;
-                case 64:
-                    mIsCheck = check.checkForDangerousProps();
-                    Log.d(TAG, "DangerousProps " + (mIsCheck ? "detected" : "not detected"));
-                    break;
+//                case 64:
+//                    mIsCheck = check.checkForDangerousProps();
+//                    Log.d(TAG, "DangerousProps " + (mIsCheck ? "detected" : "not detected"));
+//                    break;
                 case 72:
                     mIsCheck = check.checkForRootNative();
                     Log.d(TAG, "Root via native check " + (mIsCheck ? "detected" : "not detected"));
@@ -129,7 +129,7 @@ public class CheckRootTask extends AsyncTask<Boolean, Integer, Boolean> {
             }
             publishProgress(i);
         }
-        return check.isRooted();
+        return mIsCheck;
     }
 
     @Override
